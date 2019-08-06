@@ -32,8 +32,8 @@ def clear():
 
 
 launch_code = "LAUNCH-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10))
-engine_repaired = 'false'
-thrusters_repaired = 'false'
+engine_repaired = 'true'
+thrusters_repaired = 'true'
 inventory = []
 areas = {
 
@@ -223,23 +223,23 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
                         print("10")
                         sleep(2)
                         print(9)
-                        sleep(0.5)
+                        sleep(1)
                         print(8)
-                        sleep(0.5)
+                        sleep(1)
                         print(7)
-                        sleep(0.5)
+                        sleep(1)
                         print(6)
-                        sleep(0.5)
+                        sleep(1)
                         print(5)
-                        sleep(0.5)
+                        sleep(1)
                         print(4)
-                        sleep(0.5)
+                        sleep(1)
                         print(3)
-                        sleep(0.5)
+                        sleep(1)
                         print(2)
-                        sleep(0.5)
+                        sleep(1)
                         print(1)
-                        sleep(0.5)
+                        sleep(1)
                         print("LIFT OFF")
                         sleep(1)
                         print("Setting destination to Home, Moon 69")
