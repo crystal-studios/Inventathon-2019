@@ -20,4 +20,6 @@ def start():
   
   #the end bit sequence thing starts here cuz why not
   sleep(4)#after the repair thing has been activated
-print  
+  print("The shuttle has been successfully repaired and you can leave the alien planet.")
+  sleep(1)
+  print("Unfortunately, the thrusters have been  too powerful and have yeeted you and your shuttle into the moon.")
