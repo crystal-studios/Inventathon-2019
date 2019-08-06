@@ -20,4 +20,4 @@ def start():
   
   #the end bit sequence thing starts here cuz why not
   sleep(4)#after the repair thing has been activated
-  
+print  
