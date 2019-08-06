@@ -1,7 +1,4 @@
-from time import sleep
-
 def start():
-
   print("You have crash-landed on a distant alien planet.")
   sleep(1)
   print("Your shuttle has recieved varying degrees of damage, the most severe areas being:")
@@ -23,4 +20,9 @@ def leave():
   sleep(4)
   print("The shuttle has been successfully repaired and you can leave the alien planet.")
   sleep(1)
-  print("You board ")
+  print("You board the ship and power up the systems. You then launch the ship and leave the alien planet!")
+  print("GAME OVER!")
+  sleep(1)
+  print("Credits:")
+  print("Developers: Taysir, Dan and Zain.")
+  print("With special thanks to all of BBC Birmingham's CodingBrum Mentors!")
