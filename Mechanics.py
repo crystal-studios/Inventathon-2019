@@ -32,8 +32,8 @@ def clear():
 
 
 launch_code = "LAUNCH-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10))
-engine_repaired = 'true'
-thrusters_repaired = 'true'
+engine_repaired = 'false'
+thrusters_repaired = 'false'
 inventory = []
 areas = {
 
@@ -208,7 +208,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
                 print("Continue Launch? [y/n]")
                 print("Note: The game will be quit if you say no.")
                 idk = input('>')
-                if idk == 'y' or 'Y' or 'yes' or 'Yes' or 'YES':
+                if idk == 'y':
                     print("Initiating Launch Sequence")
                     sleep(1)
                     print("Input Launch Code")
@@ -253,7 +253,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
                         print("Verifying...")
                         sleep(1)
                         print("Invalid Launch Code. Aborting Launch.")
-                elif idk == 'n' or 'N' or 'no' or 'No' or 'NO':
+                elif idk == 'n':
                     sys.exit()
                     # currentarea = 'Shuttle'
                     # inventory = []
