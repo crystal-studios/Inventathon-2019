@@ -116,10 +116,10 @@ while True:
     elif move[0] == 'quit':
         exit()
     elif move[0] == 'examine':
-        if move[1] == 'engine':
+        if move[1] == 'engine' and areas[currentarea] == 'Shuttle':
             print('''The engine requires Mercurium. To make this,
 use a cooling agent such as ice and some rubber such as sap from a tree.''')
-        elif move[1] == 'thrusters':
+        elif move[1] == 'thrusters' and areas[currentarea] == 'Shuttle':
             print('''The thrusters requires Berylldium. To make this, you need two metals.''')
     elif move[0] == 'repair' and move[1] == 'engine':
         if 'mercurium' in inventory:
@@ -204,7 +204,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
                 print("Launch Code: " + launch_code)
                 sleep(1)
                 print("Continue Launch? [y/n]")
-                print("Note: The game will be quit if you say no.")
+                print("Note: The game will quit if you say no.")
                 idk = input('>')
                 if idk == 'y':
                     print("Initiating Launch Sequence")
