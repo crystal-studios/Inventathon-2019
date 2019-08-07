@@ -23,12 +23,11 @@ def showstatus():
 
 def clear():
     # for windows
-    if name == 'nt':
-        _ = system('cls')
-
+    if sys.platform == 'win32':
+        os.system('cls')
         # for mac and linux(here, os.name is 'posix')
     else:
-        _ = system('clear')#
+        os.system('clear')
 
 
 launch_code = "LAUNCH-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10))
@@ -65,34 +64,33 @@ areas = {
 }
 currentarea = 'Shuttle'
 
-# print("You have crash-landed on a distant alien planet.")
-# sleep(3)
-# print("Your shuttle has recieved varying degrees of damage, the most severe areas being:")
-# print("-The engine")
-# sleep(3)
-# print("-The thrusters")
-# sleep(1)
-# print("To leave this planet and reach the Moon, you must repair the broken pieces of the shuttle.")
-# sleep(3)
-# print('''Pieces you will need to repair are found all over this planet. To find out what these items are,
-# use the "examine" command followed by the part which you want to repair. You can also use the fabricator to create items from
-# the materials you have.''')
-# sleep(3)
-# print('''
-# One Small Step by Crystal Studios
-# =================================
-# Commands:
-# reset (or restart)
-# help
-# go <direction>
-# get <item>
-# repair <shuttle part>
-# examine <shuttle part>
-# make <item>
-# launch
-# quit
-# ''')
-# sleep(3)
+print("You have crash-landed on a distant alien planet.")
+sleep(3)
+print("Your shuttle has recieved varying degrees of damage, the most severe areas being:")
+print("-The engine")
+sleep(3)
+print("-The thrusters")
+sleep(1)
+print("To leave this planet and reach the Moon, you must repair the broken pieces of the shuttle.")
+sleep(3)
+print('''Pieces you will need to repair are found all over this planet. To find out what these items are,
+use the "examine" command followed by the part which you want to repair. You can also use the fabricator to create items from
+the materials you have.''')
+sleep(3)
+print('''
+One Small Step by Crystal Studios
+=================================
+Commands:
+help
+go <direction>
+get <item>
+repair <shuttle part>
+examine <shuttle part>
+make <item>
+launch
+quit
+''')
+sleep(3)
 
 while True:
     showstatus()
@@ -211,7 +209,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
                 if idk == 'y':
                     print("Initiating Launch Sequence")
                     sleep(1)
-                    print("Input Launch Code")
+                    print("Input Launch Code (inc. dashes)")
                     launchcode = input('>')
                     if launchcode == launch_code:
                         print("Verifying...")
@@ -219,9 +217,10 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
                         print("Valid Launch Code: Initiating Launch. Countdown started.")
                         print("Communicating with Micro:Bit...")
                         sleep(5)
+                        print("READY")
                         print("System Ready For Launch")
                         print("10")
-                        sleep(2)
+                        sleep(1)
                         print(9)
                         sleep(1)
                         print(8)
@@ -249,6 +248,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
                         print("Credits:")
                         print("Developers: Taysir, Dan and Zain.")
                         print("With special thanks to all of BBC Birmingham's CodingBrum Mentors!")
+                        break
                     else:
                         print("Verifying...")
                         sleep(1)
@@ -307,11 +307,17 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
                 print("Using pre-prepared Launch Code")
                 sleep(1)
                 print(10)
+                sleep(1)
                 print(9)
+                sleep(1)
                 print(8)
+                sleep(1)
                 print(7)
+                sleep(1)
                 print(6)
+                sleep(1)
                 print(5)
+                sleep(1)
                 print("FATAL ERROR ABORTING LAUNCH")
                 sleep(1)
                 print("The systems failed, causing the thrusters to give out.")
