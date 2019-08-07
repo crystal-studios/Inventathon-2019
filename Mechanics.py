@@ -31,8 +31,8 @@ def clear():
 
 
 launch_code = "LAUNCH-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10)) + "-" + str(randint(0, 10))
-engine_repaired = 'true'
-thrusters_repaired = 'true'
+engine_repaired = 'false'
+thrusters_repaired = 'false'
 inventory = []
 areas = {
 
@@ -176,7 +176,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
         ''')
 
     if move[0] == 'launch':
-        if engine_repaired == 'true' and thrusters_repaired == 'true':
+        if engine_repaired == 'true' and thrusters_repaired == 'true' and areas[currentarea] == 'Shuttle':
                 print("You board the ship and power on all the systems.")
                 print("The system prepares to launch.")
                 print("The system console will now be printed")
