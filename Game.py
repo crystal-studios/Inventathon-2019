@@ -21,7 +21,7 @@ def continuelaunch():
     print("Communicating with Micro:Bit...")
     sleep(5)
     print("READY")
-    print("Press LAUNCH")
+
     print("Pinging Micro:Bit. Printing onto Micro:Bit")
     print("...")
     sleep(20)
@@ -388,6 +388,9 @@ print('''Pieces you will need to repair are found all over this planet. To find 
 use the "examine" command followed by the part which you want to repair. You can also use the fabricator to create items from
 the materials you have.''')
 sleep(3)
+print('''After repairing the shuttle, using the launch command will print out a launch code. You can use enter the provided
+launch code into the GUI (the little feather icon) and press launch.''')
+sleep(3)
 print('''
 One Small Step by Crystal Studios
 =================================
@@ -429,16 +432,19 @@ while True:
     elif move[0] == 'quit':
         sys.exit()
     elif move[0] == 'examine':
-        if move[1] == 'engine' and areas[currentarea] == 'Shuttle':
+        if move[1] == 'engine':
+           # if areas[currentarea] == 'Shuttle':
             print('''The engine requires Mercurium. To make this,
 use a cooling agent such as ice and some rubber such as sap from a tree.''')
-        elif move[1] == 'thrusters' and areas[currentarea] == 'Shuttle':
+        elif move[1] == 'thrusters':
+            # if areas[currentarea] == 'Shuttle':
             print('''The thrusters requires Berylldium. To make this, you need two metals.''')
     elif move[0] == 'repair' and move[1] == 'engine':
         if 'mercurium' in inventory:
             if currentarea == 'Shuttle':
                 engine_repaired = 'true'
                 print("Successfully repaired the engine!")
+                inventory.remove('mercurium')
             else:
                 print("You need to be at the Shuttle to repair the engine!")
         else:
@@ -449,6 +455,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
             if currentarea == 'Shuttle':
                 thrusters_repaired = 'true'
                 print("Successfully repaired the thrusters!")
+                inventory.remove('berylldium')
             else:
                 print("You need to be at the Shuttle to repair the thrusters!")
         else:
@@ -458,7 +465,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
             if 'ice' in inventory:
                 if 'sap' in inventory:
                     inventory.append('mercurium')
-                    print("Used ice and sap to create mercurium!")#
+                    print("Used ice and sap to create mercurium!")
                     inventory.remove('ice')
                     inventory.remove('sap')
         if move[1] == 'berylldium':
@@ -476,21 +483,23 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
         print("-The thrusters")
         print("To leave this planet and reach the Moon, you must repair the broken pieces of the shuttle.")
         print('''Pieces you will need to repair are found all over this planet. To find out what these items are,
-        use the "examine" command followed by the part which you want to repair.''')
+use the "examine" command followed by the part which you want to repair.''')
+        print('''After repairing the shuttle, using the launch command will print out a launch code. You can use enter the provided
+launch code into the GUI (the little feather icon) and press launch.''')
         print('''
-        One Small Step by Crystal Studios
-        =================================
-        Commands:
-        reset (or restart)
-        help
-        go <direction>
-        get <item>
-        repair <shuttle part>
-        examine <shuttle part>
-        make <item>
-        launch
-        quit
-        ''')
+One Small Step by Crystal Studios
+=================================
+Commands:
+reset (or restart)
+help
+go <direction>
+get <item>
+repair <shuttle part>
+examine <shuttle part>
+make <item>
+launch
+quit
+''')
         print("Note: all commands are case sensitive. Everything is lowercase!")
 
     if move[0] == 'launch':
@@ -524,6 +533,7 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
             print("Initiating Launch Sequence")
             sleep(1)
             print("Input Launch Code (inc. dashes)")
+            print("Press LAUNCH")
             root.mainloop()
         else:
             print("You board the ship and power on all the systems.")
@@ -564,10 +574,8 @@ use a cooling agent such as ice and some rubber such as sap from a tree.''')
             sleep(1)
             print("GAME OVER!")
             sleep(1)
-            print("Enter quit to quit the game.")
-            exit = input('>')
-            if exit == 'quit':
-                sys.exit()
-
+            print("Quitting the game in 10 seconds.")
+            sleep(10)
+            sys.exit()
 
 
